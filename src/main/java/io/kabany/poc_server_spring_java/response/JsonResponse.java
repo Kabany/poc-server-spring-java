@@ -6,7 +6,7 @@ public class JsonResponse<T> {
   private T data;
 
   public JsonResponse(T data, String message) {
-    this.success = false;
+    this.success = true;
     this.data = data;
     this.message = message;
   }
