@@ -32,4 +32,19 @@ public class AuthServiceTest {
     String decoded2 = authService.validateJwtFromToken("eyJhbGciOiJIUzI1NiJ9.eyJtZXNzYWdlIjoiSGVsbG8gV29ybGQhIn0.kiLVWiCroYBS-sgSmTP_u74OmiLt_l3UeUBGfM-lmE8");
     assertEquals(message, decoded2);
   }
+
+  @Test
+  void shouldCreateHashWithSha512Algorithm() {
+    String message = "Hello World!";
+    String hash = authService.createHash(message);
+    assertEquals("861844d6704e8573fec34d967e20bcfef3d424cf48be04e6dc08f2bd58c729743371015ead891cc3cf1c9d34b49264b510751b1ff9e537937bc46b5d6ff4ecc8", hash);
+  }
+
+  @Test
+  void shouldCreateTotp() {
+    String message = "JBSWY3DPEHPK3PXP";
+    String token = authService.createTotp(message);
+    String token2 = authService.createTotp(message);
+    assertEquals(token, token2);
+  }
 }
