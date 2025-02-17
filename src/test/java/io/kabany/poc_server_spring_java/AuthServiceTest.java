@@ -31,6 +31,9 @@ public class AuthServiceTest {
     // From Ruby
     String decoded2 = authService.validateJwtFromToken("eyJhbGciOiJIUzI1NiJ9.eyJtZXNzYWdlIjoiSGVsbG8gV29ybGQhIn0.kiLVWiCroYBS-sgSmTP_u74OmiLt_l3UeUBGfM-lmE8");
     assertEquals(message, decoded2);
+    // From Swift
+    String decoded3 = authService.validateJwtFromToken("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZXNzYWdlIjoiSGVsbG8gV29ybGQhIn0.mahh4kwbMrH_-7Np_G88KLJmkW5GtFYzbLiWAfpRiJQ");
+    assertEquals(message, decoded3);
   }
 
   @Test
