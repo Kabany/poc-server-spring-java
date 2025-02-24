@@ -19,7 +19,7 @@ import com.google.gson.Gson;
 @Service
 public class AuthService {
 
-  private static String FIRST_JWT_SECRET = "ThisIsASuperSecret";
+  private static String FIRST_JWT_SECRET = "ThisIsAVeryLongStringToAlignWithTheIDX10720RequirementForDotNetWebApps";
   private Gson gson = new Gson();
 
   public String createJwtFromString(String message) {
